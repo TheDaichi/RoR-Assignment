@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RoRAssignmentOnlineMagazine</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= action_cable_meta_tag %>
+    <% if person_signed_in? %> 
+      <%= tag :meta, name: 'current-person', data: { id: current_person.id } %> 
+    <% end %>
+  </head>
+
+  <body>
+    <%= render partial: "layouts/navigation_bar" %>
+    <% if notice %>
+      <div class="alert alert-info text-center" role="alert">
+      <%= notice %>
+      </div>
+    <% end %>
+    <%= yield %>
+    <%= render partial: "layouts/footer" %>
+  </body>
+</html>

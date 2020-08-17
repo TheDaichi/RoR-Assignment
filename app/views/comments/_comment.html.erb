@@ -1,0 +1,17 @@
+<div class="card" id="comment-<%= comment.id %>" style="background-color: #ECEFF1; margin: 1rem">
+  <div class="card-body" style="padding: 0.5rem; background-color: #ECEFF1;">
+    <%= comment.body %>
+    <div class="container" style="margin-top: 5px; padding-left: 10px;">
+      <button class="btn btn-link btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample-<%= comment.id %>" aria-expanded="false" aria-controls="collapseExample" style="margin: 0px;padding: 0px"> 
+        Reply
+      </button>
+      <div class="collapse" id="collapseExample-<%= comment.id %>">
+        <div class="card card-body" style="margin-top: 5px; margin-bottom: 5px; border: 0px transparent;">
+          <%= render partial: "comments/comment_form", locals: {commentable: comment.commentable, parent_id: comment.id } %>
+        </div>
+      </div>
+    </div>
+    <%= render comment.comments %>
+  </div>
+</div>
+

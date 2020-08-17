@@ -1,0 +1,26 @@
+<%= form_with(model: article, local: true) do |form| %>
+  <% if article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.text_field :title, class: "form-control form-control-lg", id: "title", placeholder: "Enter the Title of Article" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_area :body, class: "form-control form-control-lg", placeholder: "Enter Description of Title", rows: "8" %>
+  </div>
+
+  <div class="container text-center">
+    <%= form.submit "Submit the Article", class: "btn btn-primary form-button" %>
+    <%= link_to 'Back', articles_path, class: "btn btn-link" %>
+  </div>
+<% end %>

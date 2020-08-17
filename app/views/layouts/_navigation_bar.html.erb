@@ -1,0 +1,20 @@
+<nav id="navbar-example2" class="navbar navbar-light">
+  <%= link_to "RoR", root_path, style: "color: #263238;" %>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <%= link_to 'New Article', new_article_path, class: "nav-link" %>
+    </li>
+    <% if !current_person %>
+      <li class="nav-item">
+        <%= link_to 'Sign Up', new_person_registration_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Login', new_person_session_path, class: "nav-link" %>
+      </li>
+    <% else %>
+      <li class="nav-item"> 
+        <%= link_to 'Log Out', destroy_person_session_path, :method => :delete, class: "nav-link" %>
+      </li>
+    <% end %>
+  </ul>
+</nav>

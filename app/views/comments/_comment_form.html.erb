@@ -1,0 +1,12 @@
+<div class="comment-form">
+  <%= form_for [commentable, Comment.new], :remote => true do |f| %>
+    <div class="form-group" style="margin-top: 10px;">
+      <%= f.text_area :body, class: "form-control", id: "title comment-content", placeholder: "Enter Comment" %>
+      <%= f.hidden_field :parent_id, value: local_assigns[:parent_id] %>
+    </div>
+    <div class="comment">
+      <%= f.submit "Comment", class: "btn btn-outline-primary btn-sm comment-button" %>
+    </div>
+    <div class="clr"></div>
+  <% end %>
+</div>
