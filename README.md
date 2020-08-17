@@ -16,3 +16,5 @@ master => Action Cable with Nesting Comments and real time notification
 load   => Nesting Comments with 1 minutue reload
 
 For Running Action Cable download redis server and start it and start localhost server.
+
+Login before Comment because it will give unauthorized error
