@@ -19,11 +19,14 @@
 //= require turbolinks
 //= require_tree .
 
-// $(document).ready(function () {
-//   const regex = new RegExp("articles/[1-9]");
-//   setInterval(() => {
-//     if (regex.test(window.location.pathname)) {
-//       $("#comments").load(`${window.location.href} #comments`);
-//     }
-//   }, 10000);
-// });
+$(document).ready(function () {
+  const regex = new RegExp("articles/[1-9]");
+  setInterval(() => {
+    if (
+      regex.test(window.location.pathname) &&
+      !$("#comment-content").is(":focus")
+    ) {
+      $("#comments").load(`${window.location.href} #comments`);
+    }
+  }, 25000);
+});

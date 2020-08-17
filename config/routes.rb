@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, module: :articles
   end
-  mount ActionCable.server => '/cable'
+  # Actioncable Implementation
+  # mount ActionCable.server => '/cable'
 end
