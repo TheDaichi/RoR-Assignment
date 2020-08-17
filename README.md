@@ -1,24 +1,18 @@
 # README
+Ruby Version: 2.6.5
+Rails Version: 5.2.4
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Clone or download the repo then run
+```bundle install```
 
-Things you may want to cover:
+Features
+- Action Cable for Real Time Comments
+- Login/Signup Features
+- Bootstrap
+- Comments Reaload in 1 minute
 
-* Ruby version
+Two Branches: 
+master => Action Cable with Nesting Comments and real time notification
+load   => Nesting Comments with 1 minutue reload
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+For Running Action Cable download redis server and start it and start localhost server.
